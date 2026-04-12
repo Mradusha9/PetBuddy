@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetBuddy — Find Your New Best Friend</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body class="light">
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">PetBuddy</div>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+      <li><a href="#" class="nav-link" data-page="browse">Browse</a></li>
+      <li><a href="#" class="nav-link" data-page="favorites">Favorites</a></li>
+    </ul>
+    <button class="theme-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
+  </nav>
+
+  <!-- PAGE: HOME -->
+  <div id="page-home" class="page active">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Find your new<br><em>best friend.</em></h1>
+        <p class="hero-sub">Welcome to the Digital Sanctuary. We provide a gentle, editorial-first experience for connecting loving families with their perfect pet companions.</p>
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="heroSearch" placeholder="Search by breed, age, or personality..." />
+          <button id="heroSearchBtn">Search</button>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=500&q=80" alt="Golden Retriever" class="hero-img" />
+        <div class="hero-badge">
+          <span class="paw">🐾</span>
+          <div>
+            <strong>Luna</strong>
+            <small>Recently adopted</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESIDENTS -->
+    <section class="residents">
+      <div class="residents-header">
+        <div>
+          <p class="section-label">OUR RESIDENTS</p>
+          <h2>Meet the souls waiting for you</h2>
+        </div>
+        <div class="filter-tabs">
+          <button class="tab active" data-filter="all">All Pets</button>
+          <button class="tab" data-filter="dog">Dogs</button>
+          <button class="tab" data-filter="cat">Cats</button>
+          <button class="sort-icon-btn" id="sortBtn" title="Sort">⇅</button>
+        </div>
+      </div>
+      <div id="homeCards" class="cards-grid">
+        <div class="loading-msg">Loading adorable pets… 🐾</div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+      <h2>Every companion has a story.<br>Let's start yours.</h2>
+      <p>Our sanctuary is more than a shelter. It's a bridge between lives, built on trust, transparency, and a lot of love.</p>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <h4>Vet Checked</h4>
+          <p>Full health screenings and up-to-date vaccinations for every pet.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🧠</div>
+          <h4>Behavior Eval</h4>
+          <p>Detailed personality mapping to ensure the perfect match for your lifestyle.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🤝</div>
+          <h4>Lifetime Support</h4>
+          <p>We stay by your side even after adoption with resources and guidance.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🏠</div>
+          <h4>Home Visit</h4>
+          <p>Personalized consultations to prepare your home for its new member.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-left">
+        <div class="footer-logo">PetBuddy</div>
+        <p>Connecting kindred spirits since 2024. Every animal deserves a sanctuary.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Success Stories</a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Contact</a>
+        <a href="#">Volunteer</a>
+      </div>
+      <div class="footer-icons">
+        <button>↗</button>
+        <button>✉</button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- PAGE: BROWSE -->
+  <div id="page-browse" class="page">
+    <section class="browse-section">
+      <h2 class="browse-title">Browse All Pets</h2>
+      <div class="browse-controls">
+        <input type="text" id="browseSearch" placeholder="Search breed, name, temperament…" />
+        <select id="speciesFilter">
+          <option value="all">All Species</option>
+          <option value="dog">Dogs</option>
+          <option value="cat">Cats</option>
+        </select>
+        <select id="sortFilter">
+          <option value="name-asc">Name A–Z</option>
+          <option value="name-desc">Name Z–A</option>
+        </select>
+        <button id="applyFilters">Search 🔍</button>
+      </div>
+      <div id="browseCards" class="cards-grid">
+        <div class="loading-msg">Loading pets… 🐾</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAGE: FAVORITES -->
+  <div id="page-favorites" class="page">
+    <section class="browse-section">
+      <h2 class="browse-title">Your Favorites ❤️</h2>
+      <p class="fav-subtitle">Pets you've saved — they're waiting for you.</p>
+      <div id="favCards" class="cards-grid"></div>
+    </section>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
